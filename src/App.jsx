@@ -1,12 +1,17 @@
 import { useState } from "react";
 
 import "./App.css";
+import Home from "./pages/Home";
+import CanvasIndex from "./canvas";
+import Resizer from "./pages/Resizer";
 
 function App() {
   return (
-    <>
-      <h1 className="head-text">chhavi</h1>
-    </>
+    <main className="app transition-all ease-in">
+     <Home/>
+     <CanvasIndex/>
+     <Resizer/>
+    </main>
   );
 }
 
