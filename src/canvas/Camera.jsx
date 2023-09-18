@@ -5,7 +5,7 @@ import { useSnapshot } from 'valtio';
 
 import state from '../store';
 
-const Camera= ({ props }) => {
+const Camera= ({ children }) => {
   const group = useRef();
   const snap = useSnapshot(state);
 
@@ -36,7 +36,7 @@ const Camera= ({ props }) => {
   })
 
 
-  return <group ref={group}>{props}</group>
+  return <group ref={group}>{children}</group>
 }
 
 export default Camera
