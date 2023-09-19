@@ -26,7 +26,7 @@ const TShirt = () => {
         material-roughness={1}
         dispose={null}
       >
-        {/* {snap.isFullTexture && (
+         {snap.isFullTexture && (
           <Decal 
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
@@ -42,10 +42,10 @@ const TShirt = () => {
             scale={0.15}
             map={logoTexture}
             // map-anisotropy={16}
-            depthTest={false}
-            depthWrite={true}
+            // depthTest={false}
+            // depthWrite={true}
           />
-        )} */}
+        )} 
       </mesh>
     </group>
   )
