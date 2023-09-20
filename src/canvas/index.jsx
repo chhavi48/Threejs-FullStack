@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Environment, Center } from '@react-three/drei';
 import TShirt from './TShirt';
 import Camera from './Camera';
-import { BackSide } from 'three';
+import BackSide from './BackSide';
 
 const CanvasIndex = () => {
   return (
