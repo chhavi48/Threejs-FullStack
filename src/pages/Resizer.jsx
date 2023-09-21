@@ -30,9 +30,9 @@ const Resizer = () => {
         return <AiColor />
       case "filepicker":
         return <AiFille
-          // file={file}
-          // setfile={setfile}
-          // readFile={readFile}
+          file={file}
+          setfile={setfile}
+          readFile={resetFile}
         />
       case "aipicker":
         return <AiImage
@@ -45,6 +45,43 @@ const Resizer = () => {
         return null;
     }
   }
+
+  const handleDecals=(type,result) => {
+    const decaltype=DecalTypes[type];
+    state[decaltype.stateProperty] = result;
+    if(!activeTabFilter[decaltype.filterTab]){
+      handleActiveFilter(decaltype.filterTab)
+    }
+  }
+
+  const handleActiveFilter=(tabName) => {
+    switch(tabName){
+      case "logoShirt":
+        state.isLogoTexture=!activeTabFilter[tabName];
+        break;
+
+      case "stylishShirt":
+        state.isFullTexture=!activeTabFilter[tabName];
+
+        default:
+          state.isFullTexture=false;
+          state.isLogoTexture=true;
+          
+    }
+
+  }
+
+
+  const resetFile=(type) => {
+    reader(file)
+    .then((result) => {
+      handleDecals(type,result);
+      setactiveTabEdit("")
+
+    })
+  }
+
+
   return (
     <AnimatePresence>
       {!snap.intro && (
