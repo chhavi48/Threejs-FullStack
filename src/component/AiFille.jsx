@@ -2,7 +2,7 @@ import React from "react";
 
 import Mybutton from "./Mybutton";
 
-const AiFille = ({ file, setFile, readFile }) => {
+const AiFille = ({ file, setfile, readFile }) => {
   return (
     <div className="filepicker-container">
       <div className="flex-1 flex flex-col">
@@ -10,7 +10,7 @@ const AiFille = ({ file, setFile, readFile }) => {
           id="file-upload"
           type="file"
           accept="image/*"
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={(e) => setfile(e.target.files[0])}
         />
         <label htmlFor="file-upload" className="filepicker-label">
           Upload File
